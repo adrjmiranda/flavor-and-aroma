@@ -1,20 +1,14 @@
 import Alpine from 'alpinejs';
 
-import { loadHeader } from './components/header/header';
+import { loadHeader } from './site/components/header/header';
+import { loadContent } from './site/components/content/content';
+import { loadFooter } from './site/components/footer/footer';
 
 window.Alpine = Alpine;
 Alpine.start();
 
-// Inicialização do Alpine.js
-document.addEventListener('alpine:init', () => {
-	Alpine.data('header', () => ({
-		open: false,
-		toggle() {
-			this.open = !this.open;
-		},
-	}));
-});
-
 document.addEventListener('DOMContentLoaded', () => {
 	loadHeader();
+	loadContent();
+	loadFooter();
 });

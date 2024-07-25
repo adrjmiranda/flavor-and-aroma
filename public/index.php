@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+require_once __DIR__ . "/../bootstrap.php";
 
-  <script src="assets/js/index.js" defer></script>
-</head>
+// Add routes
+require_once __DIR__ . "/../App/routes/main.php";
 
-<body>
-  <div id="header-container"></div>
+// Run Slim
 
-  <h1>Adriano</h1>
-</body>
-
-</html>
+$app->run();

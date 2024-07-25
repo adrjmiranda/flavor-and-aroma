@@ -36,8 +36,8 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns: [
 				{
-					from: path.resolve(__dirname, 'src/components') + '/**/*.html',
-					to: '[path][name][ext]',
+					from: path.resolve(__dirname, 'src') + '/**/*.html',
+					to: path.resolve(__dirname, 'App/Views') + '/[path][name][ext]',
 					context: 'src',
 				},
 			],
