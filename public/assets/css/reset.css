@@ -42,6 +42,11 @@ button {
 	transition: var(--btn-transition);
 }
 
+a .bi,
+button .bi {
+	pointer-events: none;
+}
+
 ul {
 	list-style: none;
 	display: flex;

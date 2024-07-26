@@ -20,13 +20,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/site/components/test/index.ts":
-/*!*******************************************!*\
-  !*** ./src/site/components/test/index.ts ***!
-  \*******************************************/
+/***/ "./src/site/components/navbartoggle/index.ts":
+/*!***************************************************!*\
+  !*** ./src/site/components/navbartoggle/index.ts ***!
+  \***************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst alpinejs_1 = __importDefault(__webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\"));\ndocument.addEventListener('alpine:init', () => {\n    alpinejs_1.default.data('test', () => ({\n        open: false,\n        toggle() {\n            console.log(this.open);\n            this.open = !this.open;\n        },\n    }));\n});\n\n\n//# sourceURL=webpack://flavor-and-aroma/./src/site/components/test/index.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst alpinejs_1 = __importDefault(__webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\"));\ndocument.addEventListener('alpine:init', () => {\n    alpinejs_1.default.data('navbartoggle', () => ({\n        state: true,\n        toggle() {\n            const navbarLinks = document.querySelector('.navbar_links');\n            const navbarSearch = document.querySelector('.navbar_search');\n            if (navbarLinks && navbarSearch) {\n                if (this.state) {\n                    navbarLinks.style.display = 'flex';\n                    navbarSearch.style.display = 'flex';\n                }\n                else {\n                    navbarLinks.style.display = 'none';\n                    navbarSearch.style.display = 'none';\n                }\n            }\n            this.state = !this.state;\n        },\n    }));\n});\n\n\n//# sourceURL=webpack://flavor-and-aroma/./src/site/components/navbartoggle/index.ts?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
   \***************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst alpinejs_1 = __importDefault(__webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\"));\n// Components\n__webpack_require__(/*! ./components/test */ \"./src/site/components/test/index.ts\");\nwindow.Alpine = alpinejs_1.default;\nalpinejs_1.default.start();\n\n\n//# sourceURL=webpack://flavor-and-aroma/./src/site/index.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst alpinejs_1 = __importDefault(__webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\"));\n// Components\n__webpack_require__(/*! ./components/navbartoggle */ \"./src/site/components/navbartoggle/index.ts\");\nwindow.Alpine = alpinejs_1.default;\nalpinejs_1.default.start();\n\n\n//# sourceURL=webpack://flavor-and-aroma/./src/site/index.ts?");
 
 /***/ })
 

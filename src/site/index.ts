@@ -1,8 +1,7 @@
 import Alpine from 'alpinejs';
 
 // Components
-import './components/test';
-
+import './components/navbartoggle';
 
 window.Alpine = Alpine;
 Alpine.start();
