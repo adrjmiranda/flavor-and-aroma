@@ -5,6 +5,7 @@
 .footer_row {
 	display: grid;
 	grid-template-columns: repeat(3, 30%);
+	justify-content: space-between;
 	gap: 3%;
 }
 
@@ -49,4 +50,40 @@
 .footer_form input,
 .footer_form textarea {
 	flex: 1;
+}
+
+.footer_acknowledgment {
+	font-weight: 300;
+	text-align: center;
+	font-size: 0.9rem;
+	margin-top: 3rem;
+}
+
+.footer_acknowledgment::before {
+	content: '';
+	display: block;
+	height: 0.1rem;
+	background-color: var(--deep-crimson);
+	margin-bottom: 1.5rem;
+}
+
+.footer_acknowledgment .bi {
+	color: var(--deep-crimson);
+}
+
+.footer_acknowledgment span {
+	font-weight: 400;
+	color: var(--deep-crimson);
+}
+
+@media (max-width: 980px) {
+	.footer_row {
+		grid-template-columns: 35% 20% 35%;
+	}
+}
+
+@media (max-width: 800px) {
+	.footer_row {
+		grid-template-columns: auto;
+	}
 }
