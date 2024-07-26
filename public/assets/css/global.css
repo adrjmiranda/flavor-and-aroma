@@ -57,3 +57,30 @@ body {
 .logo .detail {
 	color: var(--deep-crimson);
 }
+
+.page_content {
+	min-height: calc(100vh - 400px);
+	padding: 1.5rem 0;
+}
+
+.btn {
+	color: var(--app-white);
+	text-transform: uppercase;
+	font-weight: 300;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.btn:hover {
+	opacity: 0.9;
+}
+
+.btn.btn-primary {
+	background-color: var(--dark-bordeaux);
+}
+
+.btn.btn-secondary {
+	background-color: var(--deep-crimson);
+}

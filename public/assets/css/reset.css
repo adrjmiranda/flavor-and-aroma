@@ -8,6 +8,7 @@
 a {
 	text-decoration: none;
 	transform: var(--link-transition);
+	color: var(--dark-bordeaux);
 }
 
 input,
@@ -18,19 +19,23 @@ button {
 	outline: none;
 	background-color: none;
 	font-size: 0.9rem;
+	padding: 0.5rem 0.8rem;
+	border-radius: var(--medium-rounded);
+}
+
+input,
+textarea {
+	border: 1px solid var(--dark-bordeaux);
+}
+
+input:focus,
+textarea:focus {
+	border-color: var(--deep-crimson);
 }
 
 input::placeholder,
 textarea::placeholder {
 	font-weight: 300;
-}
-
-a,
-button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
 }
 
 select,

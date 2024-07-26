@@ -25,7 +25,6 @@
 }
 
 .navbar_links a {
-	color: var(--dark-bordeaux);
 	font-weight: 500;
 	font-size: 1rem;
 }
@@ -38,16 +37,6 @@
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-}
-
-.navbar_search input {
-	border: 1px solid var(--dark-bordeaux);
-	padding: 0.5rem 0.8rem;
-	border-radius: var(--medium-rounded);
-}
-
-.navbar_search input:focus {
-	border-color: var(--deep-crimson);
 }
 
 .navbar_search button {
