@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CZ:wght@100..400&display=swap');
+@import './reset.css';
+
+:root {
+	--app-white: #fefefe;
+	--orange-peel: #fe6c2b;
+	--fiery-red: #d43b2d;
+	--deep-crimson: #9f102c;
+	--dark-bordeaux: #340016;
+	--midnight-black: #020001;
+
+	--small-rounded: 0.1rem;
+	--medium-rounded: 0.3rem;
+	--large-rounded: 0.5rem;
+
+	--link-transition: all 0.3s ease-in-out;
+	--btn-transition: all 0.3s ease-in-out;
+
+	--playwrite-cz-font: 'Playwrite CZ', cursive;
+
+	--container-maxw: 1280px;
+}
+
+.container {
+	max-width: var(--container-maxw);
+	width: 100%;
+	margin: 0 auto;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.logo img {
+	height: 40px;
+}
+
+.logo span {
+	font-family: var(--playwrite-cz-font);
+	color: var(--dark-bordeaux);
+	font-size: 1.2rem;
+	font-weight: 900;
+	display: flex;
+	gap: 0.2rem;
+	align-items: center;
+}
+
+.logo .detail {
+	color: var(--deep-crimson);
+}

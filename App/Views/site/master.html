@@ -9,8 +9,29 @@
 		<!-- Scripts -->
 
 		<script src="{{ base_url }}/assets/js/site/index.js" defer></script>
+
+		<!-- Styles -->
+
+		<link rel="stylesheet" href="{{ base_url }}/assets/css/site/index.css" />
+
+		<!-- Bootstrap Icons -->
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+		/>
 	</head>
 	<body>
+		<!-- Navbar -->
+
+		{% include 'site/components/navbar.html' %}
+
+		<!-- Content -->
+
 		{% block content %} {% endblock %}
+
+		<!-- Footer -->
+
+		{% include 'site/components/footer.html' %}
 	</body>
 </html>

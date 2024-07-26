@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+input,
+textarea,
+select,
+button {
+	border: none;
+	outline: none;
+	background-color: none;
+	font-size: 0.9rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+	font-weight: 300;
+}
+
+a,
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+select,
+button {
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+}

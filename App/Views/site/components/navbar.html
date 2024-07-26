@@ -1,0 +1,28 @@
+<div class="navbar">
+	<div class="container">
+		<nav class="navbar_content">
+			<div class="navbar_menu">
+				{% include 'site/components/logo.html' %}
+
+				<ul class="navbar_links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+
+			<div class="navbar_search">
+				<form action="" method="post">
+					<input
+						type="search"
+						name="search"
+						placeholder="Search for a recipe"
+					/>
+					<button type="submit">
+						<i class="bi bi-search"></i>
+					</button>
+				</form>
+			</div>
+		</nav>
+	</div>
+</div>
