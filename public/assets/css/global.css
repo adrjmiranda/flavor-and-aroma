@@ -21,6 +21,12 @@
 	--container-maxw: 1280px;
 }
 
+html,
+body {
+	background-color: var(--app-white);
+	scroll-behavior: smooth;
+}
+
 .container {
 	max-width: var(--container-maxw);
 	width: 100%;

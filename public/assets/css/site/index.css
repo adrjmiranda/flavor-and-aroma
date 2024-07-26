@@ -49,6 +49,10 @@
 	border-radius: var(--medium-rounded);
 }
 
+.navbar_search input:focus {
+	border-color: var(--deep-crimson);
+}
+
 .navbar_search button {
 	padding: 0.5rem;
 	background-color: var(--deep-crimson);
@@ -56,4 +60,8 @@
 	color: var(--app-white);
 	height: 40px;
 	width: 40px;
+}
+
+.navbar_search button:hover .bi {
+	transform: scale(1.2);
 }
