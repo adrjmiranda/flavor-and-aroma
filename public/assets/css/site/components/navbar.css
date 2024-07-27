@@ -65,6 +65,9 @@
 	color: var(--deep-crimson);
 	border-radius: var(--medium-rounded);
 	font-size: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @media (min-width: 780px) {
