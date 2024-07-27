@@ -1,0 +1,32 @@
+<div class="categories_bar">
+	<ul
+		class="categories_list"
+		x-data="categories_list"
+		@wheel="scrollMenu($event)"
+	>
+		{% include 'site/components/category_item.html' %} {% include
+		'site/components/category_item.html' %} {% include
+		'site/components/category_item.html' %} {% include
+		'site/components/category_item.html' %} {% include
+		'site/components/category_item.html' %} {% include
+		'site/components/category_item.html' %} {% include
+		'site/components/category_item.html' %} {% include
+		'site/components/category_item.html' %} {% include
+		'site/components/category_item.html' %} {% include
+		'site/components/category_item.html' %}
+
+		<li class="category_item">
+			<a class="category_link active" href="#">
+				<img src="{{ base_url }}/assets/img/revenue.jpg" alt="..." />
+				<span>Lorem ipsum lorem lorem</span>
+			</a>
+		</li>
+
+		<li class="category_item">
+			<a class="category_link" href="#">
+				<img src="{{ base_url }}/assets/img/revenue.jpg" alt="..." />
+				<span>Lorem ipsum</span>
+			</a>
+		</li>
+	</ul>
+</div>

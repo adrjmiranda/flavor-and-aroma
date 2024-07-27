@@ -7,7 +7,7 @@
 
 .post_card {
 	padding: 0.5rem;
-	box-shadow: 1px 1px 15px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: var(--light-bshadow);
 	border-radius: var(--medium-rounded);
 	transition: all 0.3s ease;
 }
@@ -44,7 +44,7 @@
 }
 
 .post_card_title {
-	font-family: var(--playwrite-cz-font);
+	font-family: var(--special-font);
 	text-transform: capitalize;
 	-webkit-line-clamp: 1;
 	color: var(--fiery-red);

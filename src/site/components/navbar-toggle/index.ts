@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs';
 
 document.addEventListener('alpine:init', () => {
-	Alpine.data('navbartoggle', () => ({
+	Alpine.data('navbar_toggle', () => ({
 		state: true,
 		toggle() {
 			const navbarLinks = document.querySelector(

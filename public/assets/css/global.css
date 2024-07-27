@@ -17,9 +17,11 @@
 	--link-transition: all 0.3s ease-in-out;
 	--btn-transition: all 0.3s ease-in-out;
 
-	--playwrite-cz-font: 'Playwrite CZ', cursive;
+	--special-font: 'Playwrite CZ', cursive;
 
 	--container-maxw: 1280px;
+
+	--light-bshadow: 1px 1px 15px 5px rgba(0, 0, 0, 0.1);
 }
 
 html,
@@ -46,7 +48,7 @@ body {
 }
 
 .logo span {
-	font-family: var(--playwrite-cz-font);
+	font-family: var(--special-font);
 	color: var(--dark-bordeaux);
 	font-size: 1.2rem;
 	font-weight: 900;
@@ -65,7 +67,7 @@ body {
 }
 
 .page_title {
-	font-family: var(--playwrite-cz-font);
+	font-family: var(--special-font);
 	margin-bottom: 1.5rem;
 	text-transform: capitalize;
 }

@@ -80,7 +80,7 @@
 .banner_card_info h4 {
 	-webkit-line-clamp: 1;
 	text-transform: capitalize;
-	font-weight: 900;
+	font-weight: 500;
 }
 
 .banner_card_info p {
@@ -97,7 +97,7 @@
 }
 
 .banner_title {
-	font-family: var(--playwrite-cz-font);
+	font-family: var(--special-font);
 	text-transform: capitalize;
 }
 
