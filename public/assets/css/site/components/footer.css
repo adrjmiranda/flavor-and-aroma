@@ -41,6 +41,14 @@
 	color: var(--deep-crimson);
 }
 
+.footer_social_list {
+	gap: 1.5rem;
+}
+
+.footer_social_list a {
+	font-size: 1.5rem;
+}
+
 .footer_form {
 	display: flex;
 	flex-direction: column;
