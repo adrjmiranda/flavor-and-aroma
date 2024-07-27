@@ -3,3 +3,6 @@
 @import './components/navbar.css';
 @import './components/footer.css';
 @import './components/banner.css';
+@import './components/posts_container.css';
+
+@import './pages/home.css';

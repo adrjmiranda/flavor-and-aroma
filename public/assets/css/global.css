@@ -3,6 +3,7 @@
 
 :root {
 	--app-white: #fefefe;
+	--light-gray: #f2f2f2;
 	--orange-peel: #fe6c2b;
 	--fiery-red: #d43b2d;
 	--deep-crimson: #9f102c;
@@ -60,7 +61,24 @@ body {
 
 .page_content {
 	min-height: calc(100vh - 400px);
-	padding: 1.5rem 0;
+	padding: 3rem 0;
+}
+
+.page_title {
+	font-family: var(--playwrite-cz-font);
+	margin-bottom: 1.5rem;
+	text-transform: capitalize;
+}
+
+.page_title,
+.page_info {
+	text-align: center;
+}
+
+.page_info {
+	margin-bottom: 3rem;
+	font-size: 1rem;
+	font-weight: 300;
 }
 
 .btn {
@@ -71,6 +89,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	border-radius: var(--medium-rounded);
+	padding: 0.5rem;
 }
 
 .btn:hover {
@@ -83,4 +103,21 @@ body {
 
 .btn.btn-secondary {
 	background-color: var(--deep-crimson);
+}
+
+.time_card {
+	position: absolute;
+	background-color: var(--orange-peel);
+	color: var(--app-white);
+	font-weight: 400;
+	padding: 0.5rem;
+	font-size: 1rem;
+	border-radius: var(--small-rounded);
+	display: flex;
+	gap: 0.3rem;
+	justify-content: center;
+	align-items: center;
+	bottom: 0.2rem;
+	right: 0.2rem;
+	z-index: 1;
 }
