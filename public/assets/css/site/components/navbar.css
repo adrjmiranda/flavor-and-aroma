@@ -35,8 +35,11 @@
 
 .navbar_links_social {
 	gap: 1rem;
-	padding: 0.5rem 1.5rem;
+}
+
+.navbar_links_social a {
 	border-radius: var(--medium-rounded);
+	padding: 0.5rem;
 	box-shadow: var(--light-bshadow);
 }
 

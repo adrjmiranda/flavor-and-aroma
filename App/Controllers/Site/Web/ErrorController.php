@@ -6,12 +6,12 @@ use App\Controllers\Site\BaseController;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class PostController extends BaseController
+class ErrorController extends BaseController
 {
-  public function index(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+  public function notFound(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
   {
-    $view = $this->render('post', [
-      'page_title' => 'Post'
+    $view = $this->render('404', [
+      'page_title' => '404 Error'
     ]);
     $response->getBody()->write($view);
 
