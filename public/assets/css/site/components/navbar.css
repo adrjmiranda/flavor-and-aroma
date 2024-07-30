@@ -43,6 +43,18 @@
 	box-shadow: var(--light-bshadow);
 }
 
+.navbar_auth_link {
+	background-color: var(--deep-crimson);
+	padding: 0.5rem 1rem;
+	color: var(--app-white);
+	border-radius: var(--medium-rounded);
+}
+
+.navbar_auth_link:hover {
+	background-color: var(--fiery-red);
+	color: var(--app-white) !important;
+}
+
 .navbar_search form {
 	display: flex;
 	align-items: center;
