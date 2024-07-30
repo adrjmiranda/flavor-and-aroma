@@ -14,5 +14,6 @@ $dotenv->load();
 $app = AppFactory::create();
 
 $app->addBodyParsingMiddleware();
+$app->addErrorMiddleware(false, false, false);
 
 $app->add(new NotFoundMiddleware);
