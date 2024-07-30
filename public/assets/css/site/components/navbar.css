@@ -116,6 +116,10 @@
 		padding: 0;
 	}
 
+	.navbar_links_social {
+		margin: 2rem 0;
+	}
+
 	.navbar_search {
 		width: 100%;
 	}
