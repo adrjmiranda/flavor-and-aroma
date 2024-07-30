@@ -10,8 +10,9 @@ class PostController extends BaseController
 {
   public function index(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
   {
-    $view = $this->render('dashboard', [
-      'page_title' => 'Dashboard'
+    $view = $this->render('posts', [
+      'page_title' => 'Posts',
+      'active' => 'posts'
     ]);
     $response->getBody()->write($view);
 

@@ -3,12 +3,23 @@
 <!-- Content -->
 
 <div class="dashboard">
-	<div class="dashboar_content">
-		<div class="dashboard_side_menu">Menu</div>
+	<div class="dashboard_content">
+		<div class="dashboard_side_menu">
+			<div class="dashboard_user_info">
+				<img src="{{ base_url }}/assets/img/admin/avatar.jpg" alt="Avatar" />
+				<p>Welecome <a href="#" class="dashboard_user_name">John Doe</a></p>
+			</div>
+
+			{% include 'admin/components/dashboard_side_links.html' %}
+		</div>
 
 		<div class="dashboard_inner">
-			<div class="dashboard_header">Header</div>
-			<div class="dashboard_body">Body</div>
+			<div class="dashboard_header dashboard_component">
+				<h1 class="dashboard_title">Daschoard</h1>
+			</div>
+			<div class="dashboard_body dashboard_component">
+				{% block dashboard_body %} {% endblock %}
+			</div>
 		</div>
 	</div>
 </div>

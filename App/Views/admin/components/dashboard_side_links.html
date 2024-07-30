@@ -1,0 +1,38 @@
+<ul class="dashboard_side_links">
+	<li>
+		<a
+			href="/admin/dashboard"
+			class="dashboard_side_link {% if active == 'dashboard' %} active {% endif %}"
+		>
+			<i class="bi bi-house-fill"></i>
+			<span>Dashboard</span>
+		</a>
+	</li>
+
+	<li>
+		<a
+			href="/admin/dashboard/posts"
+			class="dashboard_side_link {% if active == 'posts' %} active {% endif %}"
+		>
+			<i class="bi bi-cookie"></i>
+			<span>Posts</span>
+		</a>
+	</li>
+
+	<li>
+		<a
+			href="/admin/dashboard/users"
+			class="dashboard_side_link {% if active == 'users' %} active {% endif %}"
+		>
+			<i class="bi bi-person-lines-fill"></i>
+			<span>Users</span>
+		</a>
+	</li>
+
+	<li>
+		<a href="/admin/logout" class="dashboard_side_link">
+			<i class="bi bi-box-arrow-right"></i>
+			<span>Logout</span>
+		</a>
+	</li>
+</ul>

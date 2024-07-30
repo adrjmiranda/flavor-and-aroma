@@ -10,8 +10,9 @@ class UserController extends BaseController
 {
   public function index(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
   {
-    $view = $this->render('dashboard', [
-      'page_title' => 'Dashboard'
+    $view = $this->render('users', [
+      'page_title' => 'Users',
+      'active' => 'users'
     ]);
     $response->getBody()->write($view);
 
