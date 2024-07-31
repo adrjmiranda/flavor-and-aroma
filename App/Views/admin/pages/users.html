@@ -3,7 +3,41 @@
 <!-- Content -->
 
 <div class="users">
-	<h1>Users</h1>
+	{% include 'admin/components/search_bar.html' %}
+
+	<table class="data">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Comments</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Jane Doe</td>
+				<td>janedoe@email.com</td>
+				<td>5</td>
+				<td>
+					<button type="button" class="visibility-btn">
+						<i class="bi bi-eye-slash"></i>
+					</button>
+
+					<button type="button" class="edit-btn">
+						<i class="bi bi-pencil-square"></i>
+					</button>
+
+					<button type="button" class="remove-btn">
+						<i class="bi bi-trash-fill"></i>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
 {% endblock %}

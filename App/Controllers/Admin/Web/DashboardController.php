@@ -10,7 +10,7 @@ class DashboardController extends BaseController
 {
   public function index(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
   {
-    $view = $this->render('dashboard', [
+    $view = $this->render('home', [
       'page_title' => 'Dashboard',
       'active' => 'dashboard'
     ]);
