@@ -1,0 +1,8 @@
+.users .data td:nth-child(2),
+.users .data td:nth-child(3) {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-wrap: nowrap;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}

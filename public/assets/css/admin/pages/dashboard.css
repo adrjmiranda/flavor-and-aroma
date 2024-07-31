@@ -86,13 +86,34 @@
 	border: 3px solid var(--app-white);
 }
 
+/* Navbar Toggle */
+
+.navbar_toggle {
+	display: none;
+	position: absolute;
+	right: 1.5rem;
+	top: 1.5rem;
+}
+
+.navbar_toggle button {
+	height: 40px;
+	width: 40px;
+	color: var(--app-white);
+	background-color: var(--dark-bordeaux);
+	border-radius: var(--medium-rounded);
+	font-size: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .dashboard_inner {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	gap: 3rem;
+	gap: 1.5rem;
 	width: 85%;
-	padding: 2rem;
+	padding: 1.5rem;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -113,6 +134,8 @@
 	color: var(--dark-bordeaux);
 }
 
+/* Post Add Button */
+
 .post_add {
 	display: flex;
 	width: fit-content;
@@ -125,6 +148,8 @@
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 }
+
+/* Data */
 
 .data {
 	width: 100%;
@@ -156,6 +181,7 @@
 	padding: 0.5rem 1.5rem;
 	border-radius: var(--medium-rounded);
 	align-items: center;
+	gap: 1rem;
 }
 
 .data th,
@@ -191,4 +217,116 @@
 
 .data .remove-btn {
 	background-color: red;
+}
+
+@media (max-width: 1300px) {
+	.dashboard_content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.dashboard_side_menu {
+		width: 100%;
+		min-height: auto;
+		flex-direction: row;
+		align-items: flex-center;
+		justify-content: space-between;
+		z-index: 1;
+		padding: 1.5rem !important;
+		position: static;
+	}
+
+	.dashboard_user_info {
+		flex-direction: row;
+	}
+
+	.dashboard_user_info img {
+		height: 60px;
+		width: 60px;
+		border-width: 2px;
+	}
+
+	.dashboard_user_info p {
+		font-size: 1rem;
+		font-weight: 300;
+	}
+
+	.dashboard_user_name {
+		font-weight: 500;
+	}
+
+	.dashboard_side_links {
+		flex-direction: row;
+		justify-content: flex-end;
+		margin-top: unset;
+		align-items: center;
+	}
+
+	.dashboard_side_links li:last-child {
+		margin-top: unset;
+	}
+
+	.dashboard_side_link {
+		padding: 0.5rem 1.5rem;
+	}
+
+	.dashboard_side_link .bi {
+		font-size: 2rem;
+		pointer-events: none;
+	}
+
+	.dashboard_side_link span {
+		font-size: 0.9rem;
+	}
+
+	.dashboard_inner {
+		width: 100%;
+		position: static;
+	}
+}
+
+@media (min-width: 830px) {
+	.dashboard_side_links {
+		display: flex !important;
+	}
+}
+
+@media (max-width: 960px) {
+	.data th:nth-child(3),
+	.data th:nth-child(4),
+	.data td:nth-child(3),
+	.data td:nth-child(4) {
+		display: none !important;
+	}
+}
+
+@media (max-width: 830px) {
+	.dashboard_side_menu {
+		flex-direction: column;
+	}
+
+	.dashboard_side_links {
+		display: none;
+		flex-direction: column;
+		margin-top: 3rem;
+	}
+
+	.dashboard_side_links li {
+		width: calc(100% - 3rem);
+	}
+
+	.navbar_toggle {
+		display: block;
+	}
+}
+
+@media (max-width: 510px) {
+	.data th:nth-child(2),
+	.data td:nth-child(2) {
+		display: none !important;
+	}
+
+	.data td:last-child {
+		gap: 0.5rem;
+	}
 }
