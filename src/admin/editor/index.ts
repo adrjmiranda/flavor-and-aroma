@@ -49,12 +49,14 @@ const toolbarOptions = [
 	['clean'],
 ];
 
-new Quill('#editor', {
-	theme: 'snow',
-	placeholder: 'Add a new recipe',
-	modules: {
-		toolbar: toolbarOptions,
-	},
-});
+if (document.querySelector('#editor')) {
+	new Quill('#editor', {
+		theme: 'snow',
+		placeholder: 'Add a new recipe',
+		modules: {
+			toolbar: toolbarOptions,
+		},
+	});
+}
 
 export default Quill;
