@@ -3,6 +3,8 @@
 namespace App\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use DateTime;
 
 #[ORM\Entity]
@@ -59,6 +61,18 @@ class User
    */
   #[ORM\Column(type: 'datetime')]
   private DateTime $updated_at;
+
+  /**
+   * Post comments.
+   * @var Collection
+   */
+  #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'post')]
+  private Collection $comments;
+
+  public function __construct()
+  {
+    $this->comments = new ArrayCollection();
+  }
 
   /**
    * Returns user id.
@@ -145,5 +159,15 @@ class User
   public function onPreUpdate(): void
   {
     $this->updated_at = new DateTime();
+  }
+
+  /**
+   * Adds a new user-made comment.
+   * @param \App\Entities\Comment $comment
+   * @return void
+   */
+  public function addComment(Comment $comment): void
+  {
+    $this->comments[] = $comment;
   }
 }

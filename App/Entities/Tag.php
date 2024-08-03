@@ -13,4 +13,7 @@ namespace App\Entities;
  */
 class Tag
 {
+  private int|null $id = null;
+  private string $name;
+  private string $slug;
 }

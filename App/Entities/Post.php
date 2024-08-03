@@ -63,6 +63,13 @@ class Post
   private Admin $admin;
 
   /**
+   * Post comments.
+   * @var Collection
+   */
+  #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'post')]
+  private Collection $comments;
+
+  /**
    * Post creation date
    * @var DateTime
    */
@@ -86,6 +93,7 @@ class Post
   public function __construct()
   {
     $this->categories = new ArrayCollection();
+    $this->comments = new ArrayCollection();
   }
 
   /**
@@ -214,21 +222,22 @@ class Post
   }
 
   /**
-   * Returns list of post categories
-   * @return \Doctrine\Common\Collections\Collection
-   */
-  public function getCategories(): Collection
-  {
-    return $this->categories;
-  }
-
-  /**
    * Add a category to the post's category list.
    * @param \App\Entities\Category $category
    * @return void
    */
-  public function setCategories(Category $category): void
+  public function addCategory(Category $category): void
   {
     $this->categories[] = $category;
+  }
+
+  /**
+   * Add a comment to the post.
+   * @param \App\Entities\Comment $comment
+   * @return void
+   */
+  public function addComment(Comment $comment): void
+  {
+    $this->comments[] = $comment;
   }
 }
