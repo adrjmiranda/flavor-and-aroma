@@ -18,4 +18,15 @@ class PostController extends BaseController
 
     return $response;
   }
+
+  public function add(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+  {
+    $view = $this->render('add_post', [
+      'page_title' => 'Add post',
+      'active' => ''
+    ]);
+    $response->getBody()->write($view);
+
+    return $response;
+  }
 }

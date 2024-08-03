@@ -1,0 +1,20 @@
+.add_post_form {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#editor {
+	height: 100%;
+	width: 100%;
+	flex: 1;
+}
+
+.ql-container {
+	height: 100%;
+}
+
+.ql-editor {
+	height: 100%;
+	box-sizing: border-box;
+}

@@ -1,5 +1,6 @@
 @import '../global.css';
 
+@import './components/editor.css';
 @import './components/search_bar.css';
 
 @import './pages/auth.css';

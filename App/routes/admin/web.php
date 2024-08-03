@@ -14,4 +14,8 @@ $app->group('/admin', function (RouteCollectorProxy $group) {
     $sub->get('/posts', PostController::class . ':index');
     $sub->get('/users', UserController::class . ':index');
   });
+
+  $group->group('/post', function (RouteCollectorProxy $sub) {
+    $sub->get('/add', PostController::class . ':add');
+  });
 });
