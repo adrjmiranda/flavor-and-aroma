@@ -233,7 +233,7 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n__webpack_require__(/*! quill/dist/quill.snow.css */ \"./node_modules/quill/dist/quill.snow.css\");\nconst core_1 = __importDefault(__webpack_require__(/*! quill/core */ \"./node_modules/quill/core.js\"));\nconst toolbar_1 = __importDefault(__webpack_require__(/*! quill/modules/toolbar */ \"./node_modules/quill/modules/toolbar.js\"));\nconst snow_1 = __importDefault(__webpack_require__(/*! quill/themes/snow */ \"./node_modules/quill/themes/snow.js\"));\nconst bold_1 = __importDefault(__webpack_require__(/*! quill/formats/bold */ \"./node_modules/quill/formats/bold.js\"));\nconst italic_1 = __importDefault(__webpack_require__(/*! quill/formats/italic */ \"./node_modules/quill/formats/italic.js\"));\nconst header_1 = __importDefault(__webpack_require__(/*! quill/formats/header */ \"./node_modules/quill/formats/header.js\"));\nconst underline_1 = __importDefault(__webpack_require__(/*! quill/formats/underline */ \"./node_modules/quill/formats/underline.js\"));\ncore_1.default.register({\n    'modules/toolbar': toolbar_1.default,\n    'themes/snow': snow_1.default,\n    'formats/bold': bold_1.default,\n    'formats/italic': italic_1.default,\n    'formats/header': header_1.default,\n    'formats/underline': underline_1.default,\n});\nnew core_1.default('#editor', {\n    theme: 'snow',\n    placeholder: 'Add a new recipe',\n});\nexports[\"default\"] = core_1.default;\n\n\n//# sourceURL=webpack://flavor-and-aroma/./src/admin/editor/index.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n__webpack_require__(/*! quill/dist/quill.snow.css */ \"./node_modules/quill/dist/quill.snow.css\");\nconst core_1 = __importDefault(__webpack_require__(/*! quill/core */ \"./node_modules/quill/core.js\"));\nconst toolbar_1 = __importDefault(__webpack_require__(/*! quill/modules/toolbar */ \"./node_modules/quill/modules/toolbar.js\"));\nconst snow_1 = __importDefault(__webpack_require__(/*! quill/themes/snow */ \"./node_modules/quill/themes/snow.js\"));\nconst bold_1 = __importDefault(__webpack_require__(/*! quill/formats/bold */ \"./node_modules/quill/formats/bold.js\"));\nconst italic_1 = __importDefault(__webpack_require__(/*! quill/formats/italic */ \"./node_modules/quill/formats/italic.js\"));\nconst header_1 = __importDefault(__webpack_require__(/*! quill/formats/header */ \"./node_modules/quill/formats/header.js\"));\nconst underline_1 = __importDefault(__webpack_require__(/*! quill/formats/underline */ \"./node_modules/quill/formats/underline.js\"));\nconst image_1 = __importDefault(__webpack_require__(/*! quill/formats/image */ \"./node_modules/quill/formats/image.js\"));\nconst strike_1 = __importDefault(__webpack_require__(/*! quill/formats/strike */ \"./node_modules/quill/formats/strike.js\"));\nconst blockquote_1 = __importDefault(__webpack_require__(/*! quill/formats/blockquote */ \"./node_modules/quill/formats/blockquote.js\"));\nconst code_1 = __importDefault(__webpack_require__(/*! quill/formats/code */ \"./node_modules/quill/formats/code.js\"));\nconst script_1 = __importDefault(__webpack_require__(/*! quill/formats/script */ \"./node_modules/quill/formats/script.js\"));\nconst list_1 = __importDefault(__webpack_require__(/*! quill/formats/list */ \"./node_modules/quill/formats/list.js\"));\nconst link_1 = __importDefault(__webpack_require__(/*! quill/formats/link */ \"./node_modules/quill/formats/link.js\"));\nconst video_1 = __importDefault(__webpack_require__(/*! quill/formats/video */ \"./node_modules/quill/formats/video.js\"));\nconst formula_1 = __importDefault(__webpack_require__(/*! quill/formats/formula */ \"./node_modules/quill/formats/formula.js\"));\ncore_1.default.register({\n    'modules/toolbar': toolbar_1.default,\n    'themes/snow': snow_1.default,\n    'formats/bold': bold_1.default,\n    'formats/italic': italic_1.default,\n    'formats/header': header_1.default,\n    'formats/underline': underline_1.default,\n    'formats/image': image_1.default,\n    'formats/strike': strike_1.default,\n    'formats/blockquote': blockquote_1.default,\n    'formats/code-block': code_1.default,\n    'formats/script': script_1.default,\n    'formats/list': list_1.default,\n    'formats/link': link_1.default,\n    'formats/video': video_1.default,\n    'formats/formula': formula_1.default,\n});\nconst toolbarOptions = [\n    ['bold', 'italic', 'underline', 'strike'],\n    ['blockquote', 'code-block'],\n    ['link', 'image', 'video', 'formula'],\n    [{ header: 1 }, { header: 2 }],\n    [{ list: 'ordered' }, { list: 'bullet' }, { list: 'check' }],\n    [{ script: 'sub' }, { script: 'super' }],\n    [{ indent: '-1' }, { indent: '+1' }],\n    [{ header: [1, 2, 3, 4, 5, 6, false] }],\n    ['clean'],\n];\nnew core_1.default('#editor', {\n    theme: 'snow',\n    placeholder: 'Add a new recipe',\n    modules: {\n        toolbar: toolbarOptions,\n    },\n});\nexports[\"default\"] = core_1.default;\n\n\n//# sourceURL=webpack://flavor-and-aroma/./src/admin/editor/index.ts?");
 
 /***/ }),
 
@@ -2063,6 +2063,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/quill/formats/blockquote.js":
+/*!**************************************************!*\
+  !*** ./node_modules/quill/formats/blockquote.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _blots_block_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blots/block.js */ \"./node_modules/quill/blots/block.js\");\n\nclass Blockquote extends _blots_block_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  static blotName = 'blockquote';\n  static tagName = 'blockquote';\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Blockquote);\n//# sourceMappingURL=blockquote.js.map\n\n//# sourceURL=webpack://flavor-and-aroma/./node_modules/quill/formats/blockquote.js?");
+
+/***/ }),
+
 /***/ "./node_modules/quill/formats/bold.js":
 /*!********************************************!*\
   !*** ./node_modules/quill/formats/bold.js ***!
@@ -2118,6 +2129,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/quill/formats/formula.js":
+/*!***********************************************!*\
+  !*** ./node_modules/quill/formats/formula.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _blots_embed_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blots/embed.js */ \"./node_modules/quill/blots/embed.js\");\n\nclass Formula extends _blots_embed_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  static blotName = 'formula';\n  static className = 'ql-formula';\n  static tagName = 'SPAN';\n  static create(value) {\n    // @ts-expect-error\n    if (window.katex == null) {\n      throw new Error('Formula module requires KaTeX.');\n    }\n    const node = super.create(value);\n    if (typeof value === 'string') {\n      // @ts-expect-error\n      window.katex.render(value, node, {\n        throwOnError: false,\n        errorColor: '#f00'\n      });\n      node.setAttribute('data-value', value);\n    }\n    return node;\n  }\n  static value(domNode) {\n    return domNode.getAttribute('data-value');\n  }\n  html() {\n    const {\n      formula\n    } = this.value();\n    return `<span>${formula}</span>`;\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Formula);\n//# sourceMappingURL=formula.js.map\n\n//# sourceURL=webpack://flavor-and-aroma/./node_modules/quill/formats/formula.js?");
+
+/***/ }),
+
 /***/ "./node_modules/quill/formats/header.js":
 /*!**********************************************!*\
   !*** ./node_modules/quill/formats/header.js ***!
@@ -2126,6 +2148,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _blots_block_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blots/block.js */ \"./node_modules/quill/blots/block.js\");\n\nclass Header extends _blots_block_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  static blotName = 'header';\n  static tagName = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'];\n  static formats(domNode) {\n    return this.tagName.indexOf(domNode.tagName) + 1;\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);\n//# sourceMappingURL=header.js.map\n\n//# sourceURL=webpack://flavor-and-aroma/./node_modules/quill/formats/header.js?");
+
+/***/ }),
+
+/***/ "./node_modules/quill/formats/image.js":
+/*!*********************************************!*\
+  !*** ./node_modules/quill/formats/image.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var parchment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! parchment */ \"./node_modules/parchment/dist/parchment.js\");\n/* harmony import */ var _link_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./link.js */ \"./node_modules/quill/formats/link.js\");\n\n\nconst ATTRIBUTES = ['alt', 'height', 'width'];\nclass Image extends parchment__WEBPACK_IMPORTED_MODULE_1__.EmbedBlot {\n  static blotName = 'image';\n  static tagName = 'IMG';\n  static create(value) {\n    const node = super.create(value);\n    if (typeof value === 'string') {\n      node.setAttribute('src', this.sanitize(value));\n    }\n    return node;\n  }\n  static formats(domNode) {\n    return ATTRIBUTES.reduce((formats, attribute) => {\n      if (domNode.hasAttribute(attribute)) {\n        formats[attribute] = domNode.getAttribute(attribute);\n      }\n      return formats;\n    }, {});\n  }\n  static match(url) {\n    return /\\.(jpe?g|gif|png)$/.test(url) || /^data:image\\/.+;base64/.test(url);\n  }\n  static sanitize(url) {\n    return (0,_link_js__WEBPACK_IMPORTED_MODULE_0__.sanitize)(url, ['http', 'https', 'data']) ? url : '//:0';\n  }\n  static value(domNode) {\n    return domNode.getAttribute('src');\n  }\n  format(name, value) {\n    if (ATTRIBUTES.indexOf(name) > -1) {\n      if (value) {\n        this.domNode.setAttribute(name, value);\n      } else {\n        this.domNode.removeAttribute(name);\n      }\n    } else {\n      super.format(name, value);\n    }\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Image);\n//# sourceMappingURL=image.js.map\n\n//# sourceURL=webpack://flavor-and-aroma/./node_modules/quill/formats/image.js?");
 
 /***/ }),
 
@@ -2151,6 +2184,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/quill/formats/list.js":
+/*!********************************************!*\
+  !*** ./node_modules/quill/formats/list.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   ListContainer: () => (/* binding */ ListContainer),\n/* harmony export */   \"default\": () => (/* binding */ ListItem)\n/* harmony export */ });\n/* harmony import */ var _blots_block_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blots/block.js */ \"./node_modules/quill/blots/block.js\");\n/* harmony import */ var _blots_container_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blots/container.js */ \"./node_modules/quill/blots/container.js\");\n/* harmony import */ var _core_quill_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../core/quill.js */ \"./node_modules/quill/core/quill.js\");\n\n\n\nclass ListContainer extends _blots_container_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {}\nListContainer.blotName = 'list-container';\nListContainer.tagName = 'OL';\nclass ListItem extends _blots_block_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  static create(value) {\n    const node = super.create();\n    node.setAttribute('data-list', value);\n    return node;\n  }\n  static formats(domNode) {\n    return domNode.getAttribute('data-list') || undefined;\n  }\n  static register() {\n    _core_quill_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].register(ListContainer);\n  }\n  constructor(scroll, domNode) {\n    super(scroll, domNode);\n    const ui = domNode.ownerDocument.createElement('span');\n    const listEventHandler = e => {\n      if (!scroll.isEnabled()) return;\n      const format = this.statics.formats(domNode, scroll);\n      if (format === 'checked') {\n        this.format('list', 'unchecked');\n        e.preventDefault();\n      } else if (format === 'unchecked') {\n        this.format('list', 'checked');\n        e.preventDefault();\n      }\n    };\n    ui.addEventListener('mousedown', listEventHandler);\n    ui.addEventListener('touchstart', listEventHandler);\n    this.attachUI(ui);\n  }\n  format(name, value) {\n    if (name === this.statics.blotName && value) {\n      this.domNode.setAttribute('data-list', value);\n    } else {\n      super.format(name, value);\n    }\n  }\n}\nListItem.blotName = 'list';\nListItem.tagName = 'LI';\nListContainer.allowedChildren = [ListItem];\nListItem.requiredContainer = ListContainer;\n\n//# sourceMappingURL=list.js.map\n\n//# sourceURL=webpack://flavor-and-aroma/./node_modules/quill/formats/list.js?");
+
+/***/ }),
+
+/***/ "./node_modules/quill/formats/script.js":
+/*!**********************************************!*\
+  !*** ./node_modules/quill/formats/script.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _blots_inline_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blots/inline.js */ \"./node_modules/quill/blots/inline.js\");\n\nclass Script extends _blots_inline_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  static blotName = 'script';\n  static tagName = ['SUB', 'SUP'];\n  static create(value) {\n    if (value === 'super') {\n      return document.createElement('sup');\n    }\n    if (value === 'sub') {\n      return document.createElement('sub');\n    }\n    return super.create(value);\n  }\n  static formats(domNode) {\n    if (domNode.tagName === 'SUB') return 'sub';\n    if (domNode.tagName === 'SUP') return 'super';\n    return undefined;\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Script);\n//# sourceMappingURL=script.js.map\n\n//# sourceURL=webpack://flavor-and-aroma/./node_modules/quill/formats/script.js?");
+
+/***/ }),
+
 /***/ "./node_modules/quill/formats/size.js":
 /*!********************************************!*\
   !*** ./node_modules/quill/formats/size.js ***!
@@ -2162,6 +2217,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/quill/formats/strike.js":
+/*!**********************************************!*\
+  !*** ./node_modules/quill/formats/strike.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _bold_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bold.js */ \"./node_modules/quill/formats/bold.js\");\n\nclass Strike extends _bold_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  static blotName = 'strike';\n  static tagName = ['S', 'STRIKE'];\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Strike);\n//# sourceMappingURL=strike.js.map\n\n//# sourceURL=webpack://flavor-and-aroma/./node_modules/quill/formats/strike.js?");
+
+/***/ }),
+
 /***/ "./node_modules/quill/formats/underline.js":
 /*!*************************************************!*\
   !*** ./node_modules/quill/formats/underline.js ***!
@@ -2170,6 +2236,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _blots_inline_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blots/inline.js */ \"./node_modules/quill/blots/inline.js\");\n\nclass Underline extends _blots_inline_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  static blotName = 'underline';\n  static tagName = 'U';\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Underline);\n//# sourceMappingURL=underline.js.map\n\n//# sourceURL=webpack://flavor-and-aroma/./node_modules/quill/formats/underline.js?");
+
+/***/ }),
+
+/***/ "./node_modules/quill/formats/video.js":
+/*!*********************************************!*\
+  !*** ./node_modules/quill/formats/video.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _blots_block_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blots/block.js */ \"./node_modules/quill/blots/block.js\");\n/* harmony import */ var _link_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./link.js */ \"./node_modules/quill/formats/link.js\");\n\n\nconst ATTRIBUTES = ['height', 'width'];\nclass Video extends _blots_block_js__WEBPACK_IMPORTED_MODULE_0__.BlockEmbed {\n  static blotName = 'video';\n  static className = 'ql-video';\n  static tagName = 'IFRAME';\n  static create(value) {\n    const node = super.create(value);\n    node.setAttribute('frameborder', '0');\n    node.setAttribute('allowfullscreen', 'true');\n    node.setAttribute('src', this.sanitize(value));\n    return node;\n  }\n  static formats(domNode) {\n    return ATTRIBUTES.reduce((formats, attribute) => {\n      if (domNode.hasAttribute(attribute)) {\n        formats[attribute] = domNode.getAttribute(attribute);\n      }\n      return formats;\n    }, {});\n  }\n  static sanitize(url) {\n    return _link_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].sanitize(url);\n  }\n  static value(domNode) {\n    return domNode.getAttribute('src');\n  }\n  format(name, value) {\n    if (ATTRIBUTES.indexOf(name) > -1) {\n      if (value) {\n        this.domNode.setAttribute(name, value);\n      } else {\n        this.domNode.removeAttribute(name);\n      }\n    } else {\n      super.format(name, value);\n    }\n  }\n  html() {\n    const {\n      video\n    } = this.value();\n    return `<a href=\"${video}\">${video}</a>`;\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Video);\n//# sourceMappingURL=video.js.map\n\n//# sourceURL=webpack://flavor-and-aroma/./node_modules/quill/formats/video.js?");
 
 /***/ }),
 
