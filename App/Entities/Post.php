@@ -3,6 +3,8 @@
 namespace App\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use DateTime;
 
 /**
@@ -73,6 +75,18 @@ class Post
    */
   #[ORM\Column(type: 'datetime')]
   private DateTime $updated_at;
+
+  /**
+   * List of post categories.
+   * @var Collection
+   */
+  #[ORM\ManyToMany(targetEntity: Category::class)]
+  private Collection $categories;
+
+  public function __construct()
+  {
+    $this->categories = new ArrayCollection();
+  }
 
   /**
    * Returns post id.
@@ -197,5 +211,24 @@ class Post
   public function onPreUpdate(): void
   {
     $this->updated_at = new DateTime();
+  }
+
+  /**
+   * Returns list of post categories
+   * @return \Doctrine\Common\Collections\Collection
+   */
+  public function getCategories(): Collection
+  {
+    return $this->categories;
+  }
+
+  /**
+   * Add a category to the post's category list.
+   * @param \App\Entities\Category $category
+   * @return void
+   */
+  public function setCategories(Category $category): void
+  {
+    $this->categories[] = $category;
   }
 }

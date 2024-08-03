@@ -63,7 +63,7 @@ class Admin
   private DateTime $updated_at;
 
   /**
-   * List of posts created
+   * List of posts created.
    * @var Collection
    */
   #[ORM\OneToMany(targetEntity: Post::class, mappedBy: 'admin')]
