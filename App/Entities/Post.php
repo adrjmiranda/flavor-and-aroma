@@ -90,10 +90,18 @@ class Post
   #[ORM\ManyToMany(targetEntity: Category::class)]
   private Collection $categories;
 
+  /**
+   * List of post tags.
+   * @var Collection
+   */
+  #[ORM\ManyToMany(targetEntity: Tag::class)]
+  private Collection $tags;
+
   public function __construct()
   {
     $this->categories = new ArrayCollection();
     $this->comments = new ArrayCollection();
+    $this->tags = new ArrayCollection();
   }
 
   /**
@@ -229,6 +237,16 @@ class Post
   public function addCategory(Category $category): void
   {
     $this->categories[] = $category;
+  }
+
+  /**
+   * Add a category to the post's tag list.
+   * @param \App\Entities\Tag $tag
+   * @return void
+   */
+  public function addTag(Tag $tag): void
+  {
+    $this->tags[] = $tag;
   }
 
   /**
