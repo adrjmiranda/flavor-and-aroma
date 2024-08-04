@@ -26,7 +26,8 @@
 		"doctrine/dbal": "^4.0",
 		"symfony/cache": "^7.1",
 		"doctrine/migrations": "^3.8",
-		"symfony/http-foundation": "^7.1"
+		"symfony/http-foundation": "^7.1",
+		"respect/validation": "^2.3"
 	},
 	"config": {
 		"process-timeout": 0

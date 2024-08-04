@@ -1,5 +1,7 @@
 <?php
 
+use App\Middlewares\CheckCSRFTokenMiddleware;
+use App\Middlewares\CheckErrorsMiddleware;
 use App\Middlewares\GenerateCSRFTokenMiddleware;
 use Slim\Routing\RouteCollectorProxy;
 use App\Controllers\Admin\Web\DashboardController;
@@ -7,9 +9,12 @@ use App\Controllers\Admin\Web\LoginController;
 use App\Controllers\Admin\Web\PostController;
 use App\Controllers\Admin\Web\UserController;
 
-$app->group('/admin', function (RouteCollectorProxy $group) {
+// Get session
+$ss = $session;
+
+$app->group('/admin', function (RouteCollectorProxy $group) use ($ss) {
   $group->get('/login', LoginController::class . ':index')->add(new GenerateCSRFTokenMiddleware);
-  $group->post('/login', LoginController::class . ':store');
+  $group->post('/login', LoginController::class . ':store')->add(new CheckErrorsMiddleware($ss))->add(new CheckCSRFTokenMiddleware);
 
   $group->group('/dashboard', function (RouteCollectorProxy $sub) {
     $sub->get('', DashboardController::class . ':index');
@@ -17,7 +22,8 @@ $app->group('/admin', function (RouteCollectorProxy $group) {
     $sub->get('/users', UserController::class . ':index');
   });
 
-  $group->group('/post', function (RouteCollectorProxy $sub) {
-    $sub->get('/add', PostController::class . ':add');
+  $group->group('/post', function (RouteCollectorProxy $sub) use ($ss) {
+    $sub->get('/add', PostController::class . ':add')->add(new GenerateCSRFTokenMiddleware);
+    $sub->post('/add', PostController::class . ':store')->add(new CheckErrorsMiddleware($ss))->add(new CheckCSRFTokenMiddleware);
   });
 });

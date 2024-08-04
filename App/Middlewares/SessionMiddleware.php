@@ -20,8 +20,7 @@ class SessionMiddleware implements MiddlewareInterface
   public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
   {
     $request = $request->withAttribute('session', $this->session);
-    $response = $handler->handle($request);
 
-    return $response;
+    return $handler->handle($request);
   }
 }

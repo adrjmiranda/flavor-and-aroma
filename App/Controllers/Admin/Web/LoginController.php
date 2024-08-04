@@ -23,8 +23,6 @@ class LoginController extends BaseController
   {
     $body = $request->getParsedBody();
 
-    dump($request);
-
     return $response;
   }
 }

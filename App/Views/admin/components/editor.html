@@ -1,4 +1,6 @@
 <form action="" class="add_post_form">
+	<input type="hidden" name="csrf" value="{{ csrf }}" />
+
 	<div class="add_post_field">
 		<label>Title</label>
 		<input type="text" name="title" placeholder="Post title" />
