@@ -22,11 +22,11 @@
 		"slim/slim": "4.*",
 		"slim/psr7": "^1.7",
 		"twig/twig": "^3.0",
-		"firebase/php-jwt": "^6.10",
 		"doctrine/orm": "^3.2",
 		"doctrine/dbal": "^4.0",
 		"symfony/cache": "^7.1",
-		"doctrine/migrations": "^3.8"
+		"doctrine/migrations": "^3.8",
+		"symfony/http-foundation": "^7.1"
 	},
 	"config": {
 		"process-timeout": 0
