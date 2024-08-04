@@ -18,7 +18,7 @@ class CheckCSRFTokenMiddleware implements MiddlewareInterface
 
     $errors = [];
     if (!v::equals($sessionCsrf)->validate($csrfReceived)) {
-      $message = 'Invalid csrf token';
+      $message = 'Invalid credentials';
       $errors['csrf'] = $message;
     }
     $request = $request->withAttribute('errors', $errors);

@@ -10,9 +10,12 @@ class LoginController extends BaseController
 {
   public function index(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
   {
+    $errors = $request->getAttribute('session')->getFlashBag()->get('errors');
+
     $view = $this->render('login', [
       'page_title' => 'Login',
-      'csrf' => $request->getAttribute('session')->get('csrf')
+      'csrf' => $request->getAttribute('session')->get('csrf'),
+      'errros' => $errors
     ]);
     $response->getBody()->write($view);
 

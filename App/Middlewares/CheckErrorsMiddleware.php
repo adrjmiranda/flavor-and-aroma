@@ -36,7 +36,7 @@ class CheckErrorsMiddleware implements MiddlewareInterface
     if (!empty($errors)) {
       $flashBag = $this->session->getFlashBag();
       foreach ($errors as $key => $message) {
-        $flashBag->add($key, $message);
+        $flashBag->add('errors', [$key => $message]);
       }
       $request = $request->withAttribute('errors', []);
 
