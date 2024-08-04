@@ -6,7 +6,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Respect\Validation\Exceptions\NestedValidationException;
 use Respect\Validation\Validator as v;
 
 class CheckCSRFTokenMiddleware implements MiddlewareInterface
