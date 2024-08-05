@@ -1,5 +1,6 @@
 <?php
 
+use App\Middlewares\Admin\RequireLoginMiddleware;
 use Slim\Routing\RouteCollectorProxy;
 
 // Middlewares
@@ -25,10 +26,10 @@ $app->group('/admin', function (RouteCollectorProxy $group) use ($ss) {
     $sub->get('', DashboardController::class . ':index');
     $sub->get('/posts', PostController::class . ':index');
     $sub->get('/users', UserController::class . ':index');
-  });
+  })->add(new RequireLoginMiddleware);
 
   $group->group('/post', function (RouteCollectorProxy $sub) use ($ss) {
     $sub->get('/add', PostController::class . ':add')->add(new GenerateCSRFTokenMiddleware);
     $sub->post('/add', PostController::class . ':store')->add(new CheckErrorsMiddleware($ss))->add(new CheckCSRFTokenMiddleware);
-  });
+  })->add(new RequireLoginMiddleware);
 });
