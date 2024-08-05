@@ -1,6 +1,8 @@
 <?php
 
+use App\Controllers\Admin\Web\LogoutController;
 use App\Middlewares\Admin\RequireLoginMiddleware;
+use App\Middlewares\Admin\RequireLogoutMiddleware;
 use Slim\Routing\RouteCollectorProxy;
 
 // Middlewares
@@ -19,8 +21,9 @@ use App\Controllers\Admin\Web\UserController;
 $ss = $session;
 
 $app->group('/admin', function (RouteCollectorProxy $group) use ($ss) {
-  $group->get('/login', LoginController::class . ':index')->add(new GenerateCSRFTokenMiddleware);
+  $group->get('/login', LoginController::class . ':index')->add(new GenerateCSRFTokenMiddleware)->add(new RequireLogoutMiddleware);
   $group->post('/login', LoginController::class . ':store')->add(new CheckErrorsMiddleware($ss))->add(new CheckCSRFTokenMiddleware)->add(new CheckLoginMiddleware);
+  $group->get('/logout', LogoutController::class . ':index')->add(new RequireLoginMiddleware);
 
   $group->group('/dashboard', function (RouteCollectorProxy $sub) {
     $sub->get('', DashboardController::class . ':index');
