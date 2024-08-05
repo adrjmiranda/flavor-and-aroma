@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\Admin\Web\LogoutController;
+use App\Middlewares\Admin\CheckPostCreationMiddleware;
 use App\Middlewares\Admin\RequireLoginMiddleware;
 use App\Middlewares\Admin\RequireLogoutMiddleware;
 use Slim\Routing\RouteCollectorProxy;
@@ -33,6 +34,6 @@ $app->group('/admin', function (RouteCollectorProxy $group) use ($ss) {
 
   $group->group('/post', function (RouteCollectorProxy $sub) use ($ss) {
     $sub->get('/add', PostController::class . ':add')->add(new GenerateCSRFTokenMiddleware);
-    $sub->post('/add', PostController::class . ':store')->add(new CheckErrorsMiddleware($ss))->add(new CheckCSRFTokenMiddleware);
+    $sub->post('/add', PostController::class . ':store')->add(new CheckErrorsMiddleware($ss))->add(new CheckCSRFTokenMiddleware)->add(new CheckPostCreationMiddleware);
   })->add(new RequireLoginMiddleware);
 });

@@ -1,4 +1,9 @@
-<form action="" class="add_post_form">
+<form
+	action="/admin/post/add"
+	class="add_post_form"
+	method="post"
+	enctype="multipart/form-data"
+>
 	<input type="hidden" name="csrf" value="{{ csrf }}" />
 
 	<div class="add_post_field_row">
@@ -12,17 +17,30 @@
 						id="file"
 						@change="handleFileChange"
 					/>
+
+					{% include 'admin/components/field_error_message.html' with {'errors':
+					errors, field: 'image'} %}
 				</div>
 			</div>
 
 			<div class="add_post_field">
 				<label>Title</label>
 				<input type="text" name="title" placeholder="Post title" />
+
+				<!-- Field Message -->
+
+				{% include 'admin/components/field_error_message.html' with {'errors':
+				errors, field: 'title'} %}
 			</div>
 
 			<div class="add_post_field">
 				<label>Slug</label>
-				<input type="text" name="Slug" placeholder="Post slug" />
+				<input type="text" name="slug" placeholder="Post slug" />
+
+				<!-- Field Message -->
+
+				{% include 'admin/components/field_error_message.html' with {'errors':
+				errors, field: 'slug'} %}
 			</div>
 
 			<div class="add_post_field">
@@ -32,6 +50,11 @@
 					<option value="2">2</option>
 					<option value="3">3</option>
 				</select>
+
+				<!-- Field Message -->
+
+				{% include 'admin/components/field_error_message.html' with {'errors':
+				errors, field: 'category'} %}
 			</div>
 		</div>
 
@@ -41,6 +64,9 @@
 	</div>
 
 	<textarea id="editor" name="body"></textarea>
+
+	{% include 'admin/components/field_error_message.html' with {'errors': errors,
+	field: 'body'} %}
 
 	<button type="submit" class="btn btn-primary">Create</button>
 </form>

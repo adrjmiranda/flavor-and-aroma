@@ -21,8 +21,14 @@ class PostController extends BaseController
 
   public function add(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
   {
+    $errors = $request->getAttribute('session')->getFlashBag()->get('errors');
+    $fields = $request->getAttribute('session')->get('fields');
+
     $view = $this->render('add_post', [
       'page_title' => 'Add post',
+      'csrf' => $request->getAttribute('session')->get('csrf'),
+      'errors' => $errors,
+      'fields' => $fields,
       'active' => ''
     ]);
     $response->getBody()->write($view);

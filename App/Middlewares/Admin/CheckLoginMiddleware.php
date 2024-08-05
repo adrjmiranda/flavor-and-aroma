@@ -20,8 +20,8 @@ class CheckLoginMiddleware implements MiddlewareInterface
     $fields['email'] = $email;
     $fields['password'] = $password;
 
-    $entity = Database::manager();
-    $admin = $entity->getRepository(Admin::class)->findOneBy(array('email' => $email));
+    $dbManager = Database::manager();
+    $admin = $dbManager->getRepository(Admin::class)->findOneBy(array('email' => $email));
 
     $errors = $request->getAttribute('errors') ?? [];
     if (!$admin instanceof Admin) {
