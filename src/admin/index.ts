@@ -3,6 +3,7 @@ import Quill from './editor';
 
 // Components
 import './components/navbar-toggle';
+import './components/file-image-handler';
 
 // Init post editor
 Quill;

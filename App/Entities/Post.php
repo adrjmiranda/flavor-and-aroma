@@ -38,7 +38,7 @@ class Post
    * The slug of the post.
    * @var string
    */
-  #[ORM\Column(type: 'string', length: 255)]
+  #[ORM\Column(type: 'string', length: 255, unique: true)]
   private string $slug;
 
   /**

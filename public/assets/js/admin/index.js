@@ -215,6 +215,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/admin/components/file-image-handler/index.ts":
+/*!**********************************************************!*\
+  !*** ./src/admin/components/file-image-handler/index.ts ***!
+  \**********************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst alpinejs_1 = __importDefault(__webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\"));\ndocument.addEventListener('alpine:init', () => {\n    alpinejs_1.default.data('file_image_handler', () => ({\n        handleFileChange(event) {\n            const input = event.target;\n            if (input.files && input.files[0]) {\n                const file = input.files[0];\n                const previewDiv = document.querySelector('.add_post_image_preview');\n                const fileURL = URL.createObjectURL(file);\n                previewDiv.style.backgroundImage = `url(${fileURL})`;\n            }\n        },\n    }));\n});\n\n\n//# sourceURL=webpack://flavor-and-aroma/./src/admin/components/file-image-handler/index.ts?");
+
+/***/ }),
+
 /***/ "./src/admin/components/navbar-toggle/index.ts":
 /*!*****************************************************!*\
   !*** ./src/admin/components/navbar-toggle/index.ts ***!
@@ -244,7 +255,7 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst alpinejs_1 = __importDefault(__webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\"));\nconst editor_1 = __importDefault(__webpack_require__(/*! ./editor */ \"./src/admin/editor/index.ts\"));\n// Components\n__webpack_require__(/*! ./components/navbar-toggle */ \"./src/admin/components/navbar-toggle/index.ts\");\n// Init post editor\neditor_1.default;\nwindow.Alpine = alpinejs_1.default;\nalpinejs_1.default.start();\n\n\n//# sourceURL=webpack://flavor-and-aroma/./src/admin/index.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst alpinejs_1 = __importDefault(__webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\"));\nconst editor_1 = __importDefault(__webpack_require__(/*! ./editor */ \"./src/admin/editor/index.ts\"));\n// Components\n__webpack_require__(/*! ./components/navbar-toggle */ \"./src/admin/components/navbar-toggle/index.ts\");\n__webpack_require__(/*! ./components/file-image-handler */ \"./src/admin/components/file-image-handler/index.ts\");\n// Init post editor\neditor_1.default;\nwindow.Alpine = alpinejs_1.default;\nalpinejs_1.default.start();\n\n\n//# sourceURL=webpack://flavor-and-aroma/./src/admin/index.ts?");
 
 /***/ }),
 
