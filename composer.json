@@ -9,10 +9,7 @@
 	"autoload": {
 		"psr-4": {
 			"App\\": "App/"
-		},
-		"files": [
-			"App/helpers/router.php"
-		]
+		}
 	},
 	"authors": [
 		{

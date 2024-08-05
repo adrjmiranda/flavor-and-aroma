@@ -2,6 +2,7 @@
 
 namespace App\Middlewares;
 
+use App\Utils\Router;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -28,7 +29,7 @@ class CheckErrorsMiddleware implements MiddlewareInterface
       }
       $request = $request->withAttribute('errors', []);
 
-      return referer($request);
+      return Router::referer($request);
     }
 
     return $handler->handle($request);
