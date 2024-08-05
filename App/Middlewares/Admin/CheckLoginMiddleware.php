@@ -17,12 +17,11 @@ class CheckLoginMiddleware implements MiddlewareInterface
     $email = $request->getParsedBody()['email'] ?? '';
     $password = $request->getParsedBody()['password'] ?? '';
 
-
     $fields['email'] = $email;
     $fields['password'] = $password;
 
     $entity = Database::manager();
-    $admin = $entity->getRepository(Admin::class)->findBy(array('email' => $email));
+    $admin = $entity->getRepository(Admin::class)->findOneBy(array('email' => $email));
 
     $errors = $request->getAttribute('errors') ?? [];
     if (!$admin instanceof Admin) {
@@ -30,11 +29,14 @@ class CheckLoginMiddleware implements MiddlewareInterface
     } else if (!password_verify($password, $admin->getPassword())) {
       $errors['password'] = 'Incorrect password';
     } else {
-      $request = $request->withAttribute('admin', [
+      $session = $request->getAttribute('session');
+      $data = [
         'id' => $admin->getId(),
         'name' => $admin->getName(),
         'email' => $admin->getEmail(),
-      ]);
+      ];
+
+      $session->set('admin', $data);
     }
     $request = $request->withAttribute('errors', $errors);
     $request = $request->withAttribute('fields', $fields);

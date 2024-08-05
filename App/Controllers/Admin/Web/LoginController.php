@@ -26,7 +26,14 @@ class LoginController extends BaseController
 
   public function store(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
   {
-    $body = $request->getParsedBody();
+    $session = $request->getAttribute('session');
+    $admin = $session->get('admin');
+
+    if (!empty($admin)) {
+      return $response
+        ->withHeader('Location', '/admin/dashboard')
+        ->withStatus(302);
+    }
 
     return $response;
   }
