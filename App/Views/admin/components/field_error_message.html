@@ -1,3 +1,6 @@
+{% if errors|length > 0 %} {% for error in errors %} {% for key, message in
+error %} {% if key == field %}
 <div class="field_error_message">
 	<p>{{ message }}</p>
 </div>
+{% endif %} {% endfor %} {% endfor %} {% endif %}
