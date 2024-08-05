@@ -21,6 +21,11 @@ class CheckErrorsMiddleware implements MiddlewareInterface
   public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
   {
     $errors = $request->getAttribute('errors') ?? [];
+    $fields = $request->getAttribute('fields') ?? [];
+
+    if (!empty($fields)) {
+      $this->session->set('fields', $fields);
+    }
 
     if (!empty($errors)) {
       $flashBag = $this->session->getFlashBag();

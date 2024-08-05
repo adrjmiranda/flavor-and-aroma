@@ -20,12 +20,26 @@
 
 				<div class="auth_input_field">
 					<label for="email">E-mail:</label>
+
+					{% if fields|length > 0 %}
 					<input
 						type="email"
 						name="email"
 						id="email"
 						placeholder="Your email"
+						value="{{ fields.email }}"
 					/>
+					{% else %}
+					<input
+						type="email"
+						name="email"
+						id="email"
+						placeholder="Your email"
+						value=""
+					/>
+					{% endif %}
+
+					<!-- Field Message -->
 
 					{% if errors|length > 0 %} {% for error in errors %} {% for key,
 					message in error %} {% if key == 'email' %} {% include
@@ -35,12 +49,26 @@
 
 				<div class="auth_input_field">
 					<label for="password">Password:</label>
+
+					{% if fields|length > 0 %}
 					<input
 						type="password"
 						name="password"
 						id="password"
 						placeholder="Your password"
+						value="{{ fields.password }}"
 					/>
+					{% else %}
+					<input
+						type="password"
+						name="password"
+						id="password"
+						placeholder="Your password"
+						value=""
+					/>
+					{% endif %}
+
+					<!-- Field Message -->
 
 					{% if errors|length > 0 %} {% for error in errors %} {% for key,
 					message in error %} {% if key == 'password' %} {% include

@@ -11,7 +11,7 @@ class LoginController extends BaseController
   public function index(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
   {
     $errors = $request->getAttribute('session')->getFlashBag()->get('errors');
-    $fields = $request->getAttribute('session')->getFlashBag()->get('fields');
+    $fields = $request->getAttribute('session')->get('fields');
 
     $view = $this->render('login', [
       'page_title' => 'Login',
