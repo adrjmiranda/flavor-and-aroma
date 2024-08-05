@@ -17,13 +17,14 @@ class CheckLoginMiddleware implements MiddlewareInterface
     $email = $request->getParsedBody()['email'] ?? '';
     $password = $request->getParsedBody()['password'] ?? '';
 
+
     $fields['email'] = $email;
     $fields['password'] = $password;
 
     $entity = Database::manager();
     $admin = $entity->getRepository(Admin::class)->findBy(array('email' => $email));
 
-    $errors = [];
+    $errors = $request->getAttribute('errors') ?? [];
     if (!$admin instanceof Admin) {
       $errors['email'] = 'This email is not registered';
     } else if (!password_verify($password, $admin->getPassword())) {

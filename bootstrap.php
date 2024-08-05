@@ -34,7 +34,7 @@ $container['session'] = function () use ($session) {
 };
 
 $app->addBodyParsingMiddleware();
-$app->addErrorMiddleware(false, false, false);
+$app->addErrorMiddleware(true, true, true);
 
 $app->add(new SessionMiddleware($session));
 $app->add(new NotFoundMiddleware);

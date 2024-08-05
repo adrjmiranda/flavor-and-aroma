@@ -6,6 +6,11 @@
 	<div class="container">
 		<div class="auth_content">
 			<form class="auth_form" method="post" action="/admin/login">
+				{% if errors|length > 0 %} {% for error in errors %} {% for key, message
+				in error %} {% if key == 'csrf' %} {% include
+				'admin/components/form_error_message.html' with {'message': message} %}
+				{% endif %} {% endfor %} {% endfor %} {% endif %}
+
 				<div class="auth_header">
 					<img src="{{ base_url }}/assets/img/logo.png" alt="Logo" />
 					<h1 class="auth_title">Hello, welcome!</h1>
@@ -21,6 +26,11 @@
 						id="email"
 						placeholder="Your email"
 					/>
+
+					{% if errors|length > 0 %} {% for error in errors %} {% for key,
+					message in error %} {% if key == 'email' %} {% include
+					'admin/components/field_error_message.html' with {'message': message}
+					%} {% endif %} {% endfor %} {% endfor %} {% endif %}
 				</div>
 
 				<div class="auth_input_field">
@@ -31,6 +41,11 @@
 						id="password"
 						placeholder="Your password"
 					/>
+
+					{% if errors|length > 0 %} {% for error in errors %} {% for key,
+					message in error %} {% if key == 'password' %} {% include
+					'admin/components/field_error_message.html' with {'message': message}
+					%} {% endif %} {% endfor %} {% endfor %} {% endif %}
 				</div>
 
 				<button class="btn btn-primary" type="submit">Login</button>

@@ -123,3 +123,23 @@ body {
 	right: 0.2rem;
 	z-index: 1;
 }
+
+.form_error_message {
+	color: var(--deep-crimson);
+	font-weight: 300;
+	font-size: 0.9rem;
+	text-align: center;
+	margin: 0.1rem 0;
+	border: 1px solid var(--deep-crimson);
+	background-color: rgba(159, 16, 44, 0.1);
+	padding: 0.5rem;
+	border-radius: var(--medium-rounded);
+}
+
+.field_error_message {
+	color: var(--deep-crimson);
+	font-weight: 300;
+	font-size: 0.9rem;
+	text-align: center;
+	margin: 0.1rem 0;
+}

@@ -19,7 +19,7 @@ $ss = $session;
 
 $app->group('/admin', function (RouteCollectorProxy $group) use ($ss) {
   $group->get('/login', LoginController::class . ':index')->add(new GenerateCSRFTokenMiddleware);
-  $group->post('/login', LoginController::class . ':store')->add(new CheckErrorsMiddleware($ss))->add(new CheckLoginMiddleware)->add(new CheckCSRFTokenMiddleware);
+  $group->post('/login', LoginController::class . ':store')->add(new CheckErrorsMiddleware($ss))->add(new CheckCSRFTokenMiddleware)->add(new CheckLoginMiddleware);
 
   $group->group('/dashboard', function (RouteCollectorProxy $sub) {
     $sub->get('', DashboardController::class . ':index');
