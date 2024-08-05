@@ -28,6 +28,12 @@ class CheckLoginMiddleware implements MiddlewareInterface
       $errors['email'] = 'This email is not registered';
     } else if (!password_verify($password, $admin->getPassword())) {
       $errors['password'] = 'Incorrect password';
+    } else {
+      $request = $request->withAttribute('admin', [
+        'id' => $admin->getId(),
+        'name' => $admin->getName(),
+        'email' => $admin->getEmail(),
+      ]);
     }
     $request = $request->withAttribute('errors', $errors);
     $request = $request->withAttribute('fields', $fields);
